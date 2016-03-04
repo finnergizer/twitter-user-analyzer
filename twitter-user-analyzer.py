@@ -4,13 +4,13 @@ import urllib
 import numpy as np
 import json
 
-f = open("config.json")
+f = open("config.json", 'rb')
 config = json.load(f)
-consumer_key = config.consumer_key
-consumer_secret = config.consumer_secret
-access_token = config.access_token
-access_token_secret = config.access_token_secret
-opencv_dir = config.opencv_dir
+consumer_key = config["consumer_key"]
+consumer_secret = config.["consumer_secret"]
+access_token = config.["access_token"]
+access_token_secret = config.["access_token_secret"]
+opencv_dir = config.["opencv_dir"]
 f.close()
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
